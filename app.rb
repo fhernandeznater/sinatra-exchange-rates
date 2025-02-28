@@ -34,4 +34,12 @@ get("/:first_symbol/:second_symbol") do
 
   erb(:step_two)
 
+  @url="https://api.exchangerate.host/convert?access_key=#{ENV.fetch("EXCHANGE_KEY")}&from=#{@from}&to=#{@to}&amount=1"
+
+  @raw_response = HTTP.get(api_url)
+  @raw_string = @raw_response.to_s
+  @parsed_data = JSON.parse(@raw_string)
+  @amount = @parsed_data.fetch("result")
+
+
 end
