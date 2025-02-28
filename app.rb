@@ -32,4 +32,6 @@ get("/:first_symbol/:second_symbol") do
   @from = params.fetch("first_symbol")
   @to = params.fetch("second_symbol")
 
+  erb(:step_two)
+
 end

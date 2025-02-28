@@ -1,10 +1,10 @@
 <h1>Convert <%= @symbol%></h1>
 
 <ul>
-  <% @currencies.keys.each do|symbol| %>
+  <% @currencies.keys.each do|symbol_loop| %>
 
     <li>
-      <a href="/<%= @symbol %>/symbol">Convert 1 <%= @symbol%> to <%= symbol%>...
+      <a href="/<%= @symbol %>/<%= symbol_loop %>">Convert 1 <%= @symbol%> to <%= symbol_loop %>...
     </li>
 
   <% end %>
