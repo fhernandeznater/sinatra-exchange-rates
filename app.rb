@@ -9,5 +9,6 @@ get("/") do
   @raw_response = HTTP.get(api_url)
   @raw_string = @raw_response.to_s
   @parsed_data = JSON.parse(@raw_string)
+  @currencies = @parsed_data.fetch("currencies")
   erb(:homepage)
 end
